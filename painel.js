@@ -84,3 +84,27 @@
  const olho=new IntersectionObserver(es=>es.forEach(e=>{e.isIntersecting?e.target.play().catch(()=>{}):e.target.pause()}),{threshold:.35});
  vs.forEach(v=>olho.observe(v));
 })();
+
+// abas de recursos: cada recurso mostra o vídeo da tela dele; quando o vídeo acaba, passa para o próximo
+(()=>{
+ const caixa=document.querySelector('.abas');
+ if(!caixa)return;
+ const bs=[...caixa.querySelectorAll('.abas-lista button')], v=caixa.querySelector('video');
+ const calmo=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let n=0, naTela=false;
+ if(calmo)v.controls=true;
+ function mostra(i){
+  n=i;
+  bs.forEach((b,k)=>{b.classList.toggle('ativa',k==i);b.setAttribute('aria-selected',k==i);b.lastElementChild.style.height='0'});
+  v.poster='videos/'+bs[i].dataset.v+'.jpg';v.src='videos/'+bs[i].dataset.v+'.mp4';
+ }
+ const toca=()=>v.play().catch(()=>{});
+ bs.forEach((b,i)=>{b.onclick=()=>{mostra(i);toca()}});
+ v.onended=()=>{mostra((n+1)%bs.length);if(naTela)toca()};
+ v.ontimeupdate=()=>{if(v.duration)bs[n].lastElementChild.style.height=Math.min(100,100*v.currentTime/v.duration)+'%'};
+ if('IntersectionObserver' in window)new IntersectionObserver(es=>{
+  naTela=es[0].isIntersecting;
+  if(naTela&&!calmo)toca();else v.pause();
+ },{threshold:.3}).observe(v);
+ mostra(0);
+})();
