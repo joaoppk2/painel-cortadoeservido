@@ -3,7 +3,7 @@
 <meta name="description" content="Como funciona o Painel do Cortado e Servido: um aplicativo próprio que acha o episódio, cria os cortes, deixa aprovar no celular e agenda nas redes.">
 <link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"><link rel="stylesheet" href="painel.css?v=2"></head><body>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"><link rel="stylesheet" href="painel.css?v=3"></head><body>
 
 <header class="topo"><div class="dentro"><a class="marca" href="./"><img src="icon-512.png" alt="" width="36" height="36">Painel Cortado e Servido</a>
 <nav><a class="some" href="#caminho">O caminho</a><a class="some" href="#telas">O que faz</a><a class="some" href="#dentro">Por dentro</a><a href="#contato">Contato</a></nav></div></header>
@@ -56,20 +56,16 @@
 <div class="foto"><div class="janela"><video class="rola" src="videos/passo-calendario-pc.mp4" poster="videos/passo-calendario-pc.jpg" width="1280" height="800" muted loop playsinline preload="none" aria-label="Calendário do Painel com as postagens de cada dia em cada rede"></video></div></div></div>
 </div></section>
 
-<section id="telas"><div class="dentro"><div class="cab">
-<p class="olho">O que o aplicativo faz</p>
-<h2>Tudo o que o canal precisa, <em>num lugar só</em></h2></div>
-<div class="abas"><div class="abas-lista" role="tablist" aria-label="Recursos do Painel">
-<button type="button" role="tab" data-v="rec-radar"><b>Radar de episódios</b><span>Lista do que está rendendo agora em cada podcast, com nota pela audiência, para cortar o que tem chance de ser visto.</span><i></i></button>
-<button type="button" role="tab" data-v="rec-fila"><b>Fila de produção</b><span>Um episódio por vez no render, vários downloads na frente. Cada etapa aparece na tela, com o tempo que falta.</span><i></i></button>
-<button type="button" role="tab" data-v="rec-refazer"><b>Revisão com motivo</b><span>O "Refazer" pede o motivo. Corte que volta reprovado várias vezes sai da fila e vira conserto da causa, não do vídeo.</span><i></i></button>
+<section id="telas" class="inteira"><div class="abas"><div class="abas-texto"><div class="cab">
+<p class="olho">E ainda</p>
+<h2>Além do corte, <em>o resto do canal</em></h2></div>
+<div class="abas-lista" role="tablist" aria-label="Recursos do Painel">
 <button type="button" role="tab" data-v="rec-regras"><b>Regras de cada podcast</b><span>Antes de cortar, o Painel confere se a fonte libera cortes e em que condições. Tema sensível vai para um lote separado.</span><i></i></button>
-<button type="button" role="tab" data-v="passo-calendario-pc"><b>Calendário das redes</b><span>O que saiu e o que está agendado, por dia e por rede, com a hora de cada postagem.</span><i></i></button>
 <button type="button" role="tab" data-v="rec-numeros"><b>Números do canal</b><span>Visualizações, horas assistidas e inscritos ou seguidores, por rede e por período, com o gráfico por dia.</span><i></i></button>
 <button type="button" role="tab" data-v="rec-avisos"><b>Avisos no celular</b><span>Se uma rede recusa um envio, aparece uma faixa vermelha e chega uma notificação. O que deu certo não incomoda.</span><i></i></button>
 <button type="button" role="tab" data-v="rec-ideias"><b>Caixa de ideias</b><span>Texto, print e áudio mandados do celular ficam guardados até virarem melhoria no aplicativo.</span><i></i></button>
-</div>
-<div class="abas-tela"><div class="janela"><video src="videos/rec-radar.mp4" poster="videos/rec-radar.jpg" width="1280" height="800" muted playsinline preload="none" aria-label="Vídeo do recurso escolhido no Painel"></video></div></div></div></div></section>
+</div></div>
+<div class="abas-tela"><video src="videos/rec-regras.mp4" poster="videos/rec-regras.jpg" width="1280" height="800" muted playsinline preload="none" aria-label="Vídeo do recurso escolhido no Painel"></video></div></div></section>
 
 <section id="dentro" class="faixa"><div class="dentro"><div class="cab">
 <p class="olho">Por dentro</p>
@@ -90,5 +86,5 @@
 </main>
 
 <footer><div class="dentro">Painel Cortado e Servido · projeto de João, do canal <a href="https://www.youtube.com/@cortadoeservido">Cortado e Servido</a> · os cortes creditam o podcast original e levam ao episódio completo.</div></footer>
-<script src="painel.js?v=2"></script>
+<script src="painel.js?v=3"></script>
 </body></html>

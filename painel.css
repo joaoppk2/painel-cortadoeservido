@@ -125,8 +125,12 @@ footer a{color:var(--fraco)}
  .capa .sub{font-size:clamp(1.1rem,1.25vw,2rem)}
  .capa{min-height:calc(100vh - 3.6rem);min-height:calc(100svh - 3.6rem);display:flex;align-items:center}
 }
-/* abas de recursos: a lista de um lado e o vídeo da tela do outro; a barra amarela mostra o andamento do vídeo */
-.abas{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.5fr);gap:2.5rem;align-items:start}
+/* abas de recursos: a lista de um lado e, do outro, o vídeo da tela como fundo da seção, de cima a baixo e até a borda
+   da página, sumindo aos poucos para o lado do texto; a barra amarela mostra o andamento do vídeo */
+section.inteira{padding:0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);overflow:hidden}
+.abas{display:grid;grid-template-columns:minmax(0,32fr) minmax(0,68fr);align-items:center}
+.abas-texto{padding:3rem 1rem 3rem 5vw;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+.abas-texto .cab{margin-bottom:1.8rem}
 .abas-lista{display:flex;flex-direction:column}
 .abas-lista button{font:inherit;text-align:left;background:none;border:0;border-left:3px solid var(--linha);color:var(--fraco);cursor:pointer;
  position:relative;padding:.85rem 1rem .85rem 1.2rem;border-radius:0 .8rem .8rem 0;transition:background .25s}
@@ -137,12 +141,14 @@ footer a{color:var(--fraco)}
 .abas-lista .ativa{background:var(--chapa)}
 .abas-lista .ativa b{color:var(--amarelo)}
 .abas-lista .ativa span{max-height:9em;opacity:1;margin-top:.3em}
-.abas-tela{position:sticky;top:5rem}
-section.faixa .abas-lista .ativa{background:var(--preto)}
+.abas-tela video{display:block;width:100%;height:auto;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 13%);mask-image:linear-gradient(90deg,transparent,#000 13%)}
 @media (max-width:1100px){.grade{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
- .abas{grid-template-columns:1fr;gap:1rem}
- .abas-tela{order:-1;top:3.9rem;z-index:3;background:var(--preto);padding:.4rem 0 .6rem;margin:0 -16px;padding-left:16px;padding-right:16px}
+ .abas{grid-template-columns:1fr}
+ .abas-texto{padding:1.4rem 16px 2.6rem}
+ .abas-tela{order:-1;position:sticky;top:3.6rem;z-index:3;background:var(--preto)}
+ .abas-tela video{-webkit-mask-image:none;mask-image:none}
  .grade,.grade:has(li:nth-child(3):last-child){grid-template-columns:1fr}
  section{padding:44px 0}
  .capa{padding:32px 0 24px}
