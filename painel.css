@@ -143,6 +143,31 @@ section.inteira{padding:0;border-top:1px solid var(--linha);border-bottom:1px so
 .abas-lista .ativa span{max-height:9em;opacity:1;margin-top:.3em}
 .abas-tela video{display:block;width:100%;height:auto;
  -webkit-mask-image:linear-gradient(90deg,transparent,#000 13%);mask-image:linear-gradient(90deg,transparent,#000 13%)}
+/* aplicativo integrado à página: os vídeos do Painel não têm moldura de janela; no computador vão até a borda da
+   página e somem aos poucos para o lado do texto (o fundo do aplicativo é da mesma cor do site) */
+.janela{border:0;border-radius:0;overflow:visible;background:none;box-shadow:none}
+.janela::before{display:none}
+.celular{border:2px solid #2c2c2c;border-radius:1.5rem;box-shadow:0 1.2rem 3rem #000c}
+section.integrada{background:var(--preto);padding-bottom:0}
+.passo .foto:hover img,.passo .foto:hover video{transform:none}
+.js .passo .foto.surge{transform:none}
+@media (min-width:761px){
+ .capa{padding:0}
+ .capa .dentro{padding:0;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:0}
+ .capa .dentro>div:first-child{padding:3rem 1rem 3rem 5vw;position:relative;z-index:1}
+ .palco{padding:0}
+ .palco .janela video,.passo .janela video{-webkit-mask-image:linear-gradient(90deg,transparent,#000 13%);mask-image:linear-gradient(90deg,transparent,#000 13%)}
+ .palco .celular{right:4vw;bottom:-5%;width:22%}
+ section.integrada>.dentro{max-width:none;padding:0}
+ section.integrada .cab{max-width:none;padding:0 5vw;margin-bottom:2.5rem}
+ section.integrada .passo{grid-template-columns:minmax(0,36fr) minmax(0,64fr);gap:0;padding:0;border-top:1px solid var(--linha)}
+ section.integrada .passo>div:first-child{padding:3rem 1.5rem 3rem 5vw}
+ section.integrada .passo:nth-child(even){grid-template-columns:minmax(0,64fr) minmax(0,36fr)}
+ section.integrada .passo:nth-child(even)>div:first-child{padding:3rem 5vw 3rem 3rem}
+ section.integrada .passo:nth-child(even) .janela video{-webkit-mask-image:linear-gradient(270deg,transparent,#000 13%);mask-image:linear-gradient(270deg,transparent,#000 13%)}
+ section.integrada .passo .foto.estreita{max-width:none;margin:0;display:grid;place-items:center;padding:2.5rem 0}
+ section.integrada .passo .foto.estreita .celular{width:min(19rem,60%)}
+}
 @media (max-width:1100px){.grade{grid-template-columns:1fr 1fr}}
 @media (max-width:760px){
  .abas{grid-template-columns:1fr}
