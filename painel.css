@@ -183,3 +183,38 @@ section.integrada{background:var(--preto);padding-bottom:0}
  h1{font-size:clamp(2.2rem,9.5vw,3.2rem)}
  .numeros{grid-template-columns:1fr 1fr}
 }
+
+/* movimento com a biblioteca Motion (classe mo no html): o movimento vem do painel.js; aqui só o estado inicial */
+.mo .surge{opacity:0}
+.mo .pal{display:inline-block;transform-origin:0 100%}
+.mo .passo{overflow-x:clip}
+.mo .capa .botao:not(.claro),.mo .chamada .botao{animation:brilho 2.6s ease-out 1.2s infinite}
+.mo .abas-lista{position:relative}
+.mo .abas-lista .ativa{background:none}
+.mo .abas-lista button{z-index:1}
+.mo .abas-lista span{transition:opacity .35s}
+.aba-fundo{position:absolute;left:0;right:0;top:0;height:0;background:var(--chapa);border-radius:0 .8rem .8rem 0;pointer-events:none}
+
+/* modo cinema (section.cine): passos presos na tela, a rolagem troca de capítulo; sem a classe mo ficam um abaixo do outro */
+.mo .cine-palco{position:sticky;top:3.6rem;height:calc(100svh - 3.6rem);overflow:hidden;border-top:1px solid var(--linha)}
+.mo .cine-palco .passo{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,36fr) minmax(0,64fr)!important;grid-template-rows:100%;gap:0!important;padding:0!important;border:0!important;align-items:center;opacity:0;pointer-events:none}
+.mo .cine-palco .passo.ativo{pointer-events:auto}
+.mo .cine-palco .passo>div:first-child{padding:2rem 1.5rem 2rem calc(5vw + 2rem)!important}
+.mo .cine-palco .passo .foto{order:0!important}
+.mo .cine-palco .janela video{width:100%;height:auto;max-height:calc(100svh - 3.6rem);object-fit:contain;-webkit-mask-image:linear-gradient(90deg,transparent,#000 13%)!important;mask-image:linear-gradient(90deg,transparent,#000 13%)!important}
+.mo .cine-palco .foto.estreita{height:100%;padding:0!important;max-width:none!important;margin:0!important;display:grid;place-items:center}
+.mo .cine-palco .foto.estreita .celular{height:82%;max-height:40rem;width:auto!important;aspect-ratio:412/856}
+.mo .cine-palco .foto.estreita video{height:100%;width:100%;object-fit:cover}
+.cine-fios{position:absolute;left:5vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.5rem}
+.cine-fios i{display:block;width:3px;height:2.6rem;border-radius:3px;background:linear-gradient(var(--amarelo),var(--amarelo)) no-repeat top/100% calc(var(--p,0)*100%),var(--linha)}
+@media (max-width:760px){
+ .mo .cine-palco{border-top:0}
+ .mo .cine-palco .passo{grid-template-columns:1fr!important;grid-template-rows:auto 1fr;align-items:start;padding-top:1.4rem!important}
+ .mo .cine-palco .passo .foto{order:-1!important}
+ .mo .cine-palco .passo>div:first-child{padding:1rem 0 0!important}
+ .mo .cine-palco .janela video{-webkit-mask-image:none!important;mask-image:none!important}
+ .mo .cine-palco .foto.estreita{height:auto}
+ .mo .cine-palco .foto.estreita .celular{height:40svh}
+ .cine-fios{left:0;right:0;top:.4rem;transform:none;flex-direction:row}
+ .cine-fios i{flex:1;width:auto;height:3px;background:linear-gradient(var(--amarelo),var(--amarelo)) no-repeat left/calc(var(--p,0)*100%) 100%,var(--linha)}
+}
