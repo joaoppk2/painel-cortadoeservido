@@ -184,7 +184,7 @@ section.integrada{background:var(--preto);padding-bottom:0}
  .numeros{grid-template-columns:1fr 1fr}
 }
 
-/* movimento com a biblioteca Motion (classe mo no html): o movimento vem do painel.js; aqui só o estado inicial */
+/* PROVA com a biblioteca Motion (classe mo no html): o movimento vem do painel.js; aqui só o estado inicial */
 .mo .surge{opacity:0}
 .mo .pal{display:inline-block;transform-origin:0 100%}
 .mo .passo{overflow-x:clip}
@@ -195,7 +195,7 @@ section.integrada{background:var(--preto);padding-bottom:0}
 .mo .abas-lista span{transition:opacity .35s}
 .aba-fundo{position:absolute;left:0;right:0;top:0;height:0;background:var(--chapa);border-radius:0 .8rem .8rem 0;pointer-events:none}
 
-/* modo cinema (section.cine): passos presos na tela, a rolagem troca de capítulo; sem a classe mo ficam um abaixo do outro */
+/* modo cinema (cinema.html): passos presos na tela, a rolagem troca de capítulo; sem a classe mo ficam um abaixo do outro */
 .mo .cine-palco{position:sticky;top:3.6rem;height:calc(100svh - 3.6rem);overflow:hidden;border-top:1px solid var(--linha)}
 .mo .cine-palco .passo{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,36fr) minmax(0,64fr)!important;grid-template-rows:100%;gap:0!important;padding:0!important;border:0!important;align-items:center;opacity:0;pointer-events:none}
 .mo .cine-palco .passo.ativo{pointer-events:auto}

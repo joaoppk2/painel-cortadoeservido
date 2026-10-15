@@ -1,4 +1,4 @@
-// movimento das páginas do Painel, feito com a biblioteca Motion (motion.js, global Motion).
+// PROVA com a biblioteca Motion (motion.js, global Motion): mesma página, movimento feito por ela.
 // Sem JavaScript, ou com "reduzir movimento" ligado no aparelho, a página aparece inteira e parada.
 const calmo=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const vivo=!calmo&&!!window.Motion;
